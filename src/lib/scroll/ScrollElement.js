@@ -26,6 +26,8 @@ class ScrollElement extends Component {
    * needed to handle scrolling with trackpad
    */
   handleScroll = () => {
+    return;
+    
     const scrollX = this.scrollComponent.scrollLeft
     this.props.onScroll(scrollX)
   }
@@ -40,6 +42,9 @@ class ScrollElement extends Component {
   
 
   handleWheel = e => {
+    e.preventDefault();
+    return;
+    
     const { traditionalZoom } = this.props
 
     
@@ -63,6 +68,7 @@ class ScrollElement extends Component {
   }
 
   handleMouseDown = e => {
+    return;
     if (e.button === 0) {
       this.dragStartPosition = e.pageX
       this.dragLastPosition = e.pageX
@@ -73,6 +79,7 @@ class ScrollElement extends Component {
   }
 
   handleMouseMove = e => {
+    return;
     // this.props.onMouseMove(e)
     //why is interacting with item important?
     if (this.state.isDragging && !this.props.isInteractingWithItem) {
@@ -100,6 +107,9 @@ class ScrollElement extends Component {
   }
 
   handleTouchStart = e => {
+    e.preventDefault();
+    return;
+    
     if (e.touches.length === 2) {
       e.preventDefault()
 
@@ -121,6 +131,9 @@ class ScrollElement extends Component {
   }
 
   handleTouchMove = e => {
+    e.preventDefault();
+    return;
+    
     const { isInteractingWithItem, width, onZoom } = this.props
     if (isInteractingWithItem) {
       e.preventDefault()
@@ -184,6 +197,8 @@ class ScrollElement extends Component {
       cursor: isDragging ? 'move' : 'default',
       position: 'relative'
     }
+    
+    // className="rct-scroll"
 
     return (
       <div

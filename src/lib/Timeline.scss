@@ -31,7 +31,7 @@ $weekend: rgba(250, 246, 225, 0.5);
     display: inline-block;
     white-space: normal; // was set to nowrap in .rct-outer
     vertical-align: top;
-    overflow-x: scroll;
+    overflow-x: hidden;
     overflow-y: hidden;
     -ms-touch-action: none;
     touch-action: none;
