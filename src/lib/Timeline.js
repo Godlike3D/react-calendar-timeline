@@ -1047,7 +1047,7 @@ export default class ReactCalendarTimeline extends Component {
               {this.renderHeaders()}
               <div style={outerComponentStyle} className="rct-outer">
                 {sidebarWidth > 0 ? this.sidebar(height, groupHeights) : null}
-                <div
+                <ScrollElement
                   scrollRef={this.getScrollElementRef}
                   width={width}
                   height={height}
@@ -1091,7 +1091,7 @@ export default class ReactCalendarTimeline extends Component {
                       timeSteps
                     )}
                   </MarkerCanvas>
-                </div>
+                </ScrollElement>
                 {rightSidebarWidth > 0
                   ? this.rightSidebar(height, groupHeights)
                   : null}
